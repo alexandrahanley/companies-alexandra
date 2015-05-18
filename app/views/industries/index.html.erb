@@ -1,3 +1,21 @@
 <h1>All Industries</h1>
 
 <%= link_to 'Create New Industry', new_industry_path %>
+
+<table>
+  <tr>
+      <th><%= link_to 'Name', industry_path(@industry)%></th>
+      <th>Created At</th>
+      <th>Updated At</th>
+  </tr>
+
+    <tbody>
+      <%= @industries.each do |industry| %>
+        <tr>
+          <td><%=industry.name %></td>
+          <td><%=industry.created_at %></td>
+          <td><%=industry.updated_at %></td>
+       </tr>
+          <% end %>
+    </tbody>
+</table>

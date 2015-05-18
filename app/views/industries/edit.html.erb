@@ -1,0 +1,18 @@
+<h1>Edit Industry</h1>
+
+<%= form_for ([@company, @industry]) do |f| %>
+
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name %><br>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+  </div>
+
+
+<%= f.submit%>
+
+<% end %>
