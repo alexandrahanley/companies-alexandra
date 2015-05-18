@@ -5,6 +5,12 @@ class CompaniesController < ApplicationController
     @industries = @companies.industries.all
   end
 
+  def show
+    @industry = Industry.find(params[:industry_id])
+    @company = Company.find(params[:id])
+    @company.industry_id = @industry.id
+  end
+
   def create
     @industry = Industry.find(params[:industry_id])
     @company = Company.new(company_params)
