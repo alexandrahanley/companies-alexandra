@@ -6,8 +6,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @industry = Industry.find(params[:industry_id])
     @company = Company.find(params[:id])
+    @industry = Industry.find(params[:industry_id])
     @company.industry_id = @industry.id
   end
 
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     @company.industry_id = @industry.id
     @company.destroy
-    redirect_to company_path(@company), notice:'Company was successfully created!'
+    redirect_to company_path(@company), notice:'Company was successfully deleted!'
   end
 
   private

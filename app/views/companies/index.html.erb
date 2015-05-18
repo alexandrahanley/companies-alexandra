@@ -4,7 +4,7 @@
 
 <table>
   <tr>
-      <th><%= link_to 'Name', company_path(@company) %></th>
+      <th>Name</th>
       <th>Description</th>
       <th>Price</th>
       <th>Created_at</th>
@@ -13,7 +13,7 @@
     <tbody>
       <% @company.each do |company| %>
         <tr>
-          <td><%=company.name %></td>
+          <td><%=link_to company.name, company_path(@company)%></td>
           <td><%=company.description %></td>
           <td><%=company.price %></td>
           <td><%=company.created_at %></td>
