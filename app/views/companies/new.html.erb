@@ -1,0 +1,23 @@
+<h1>Create New Industry</h1>
+
+<%= form_for ([@industry, @company]) do |f| %>
+
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name %><br>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %><br>
+  </div>
+
+
+<%= f.submit%>
+
+<% end %>
