@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "welcome#index"
 
-  resources :industries do
-    resources :companies
-  end
-  
+  resources :industries
+  resources :companies
+
+
 end

@@ -1,3 +1,3 @@
 class Industry < ActiveRecord::Base
-  has_many :companies
+  has_and_belongs_to_many :companies
 end

@@ -11,28 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518154639) do
+ActiveRecord::Schema.define(version: 20150518175009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "industry_id"
-    t.integer  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.text    "description"
+    t.integer "industry_id"
+    t.integer "price"
   end
 
-  add_index "companies", ["industry_id"], name: "index_companies_on_industry_id", using: :btree
+  create_table "companies_industries", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "industry_id"
+  end
 
   create_table "industries", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.text   "description"
   end
 
-  add_foreign_key "companies", "industries"
 end
