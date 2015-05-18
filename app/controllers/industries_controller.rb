@@ -1,7 +1,8 @@
 class IndustriesController < ApplicationController
 
   def index
-    @industries = Industry.all
+    @company = Company.find(params[:company_id])
+    @industries = @company.industries.all
   end
 
   def new
@@ -20,7 +21,7 @@ class IndustriesController < ApplicationController
         render :new
     end
   end
-  
+
 
 
 
@@ -28,7 +29,7 @@ class IndustriesController < ApplicationController
   private
 
   def industry_params
-    params.require(:industry).permit(:name, :description)
+    params.require(:industry).permit(:name, :description, :company_id)
   end
 
 end

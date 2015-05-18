@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20150518175009) do
     t.integer "industry_id"
   end
 
+  add_index "companies_industries", ["company_id"], name: "index_companies_industries_on_company_id", using: :btree
+  add_index "companies_industries", ["industry_id"], name: "index_companies_industries_on_industry_id", using: :btree
+
   create_table "industries", force: :cascade do |t|
     t.string   "name"
     t.text     "description"

@@ -1,8 +1,7 @@
 class CompaniesController < ApplicationController
 
   def index
-    @industry = Industry.find(params[:industry_id])
-    @companies = @industry.companies.all
+    @companies = Company.all
   end
 
   private
