@@ -3,6 +3,7 @@ class CreateIndustries < ActiveRecord::Migration
     create_table :industries do |t|
       t.string :name
       t.text :description
+      t.timestamps
     end
   end
 end

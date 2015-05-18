@@ -5,6 +5,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.text :description
       t.integer :industry_id
       t.integer :price
+      t.timestamps
     end
   end
 end

@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20150518175009) do
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
-    t.integer "industry_id"
-    t.integer "price"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "industry_id"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "companies_industries", force: :cascade do |t|
@@ -29,8 +31,10 @@ ActiveRecord::Schema.define(version: 20150518175009) do
   end
 
   create_table "industries", force: :cascade do |t|
-    t.string "name"
-    t.text   "description"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
